@@ -1,0 +1,73 @@
+
+  body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    background-color: #efeffae1;
+    color: #242323;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+  }
+
+  #sec-reloj{
+    border: 1px solid #e6d2d2c9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 200px;
+    border-radius: 40px;
+   
+  }
+
+  #sec-reloj:hover {
+    color: #e4bd11;
+    transition: opacity .15s ease-in;
+  }
+
+  .fecha {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .hora {
+    padding-top: 10px;
+    font-size: 50px;
+    font-family: Arimo, sans-serif;
+  }
+
+  .frase {
+    padding-top: 10px;
+    font-size: 18px;
+    font-family: Arimo, sans-serif;
+    text-align: center;
+    line-height: 1.5;
+  
+  }
+
+  
+  .mode-light{
+    background-image: url('../img/dia.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-color: #ffc956b6;
+    color: #302e2e;
+    font-weight: 600;
+  }
+  
+  .mode-dark{
+    background-image: url('../img/noche.webp');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-color: #080969e1;
+    color: #ececec;
+  }

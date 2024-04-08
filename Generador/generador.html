@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador Contraseñas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+    <script
+    src="https://kit.fontawesome.com/a86c09b20a.js"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <main>
+        <h2><i class="fa-solid fa-shield"></i> Genera una contraseña segura</h2>
+        <section id="sec-generador">
+            <div id="div-pass-gen" class="pass-gen">
+                <p>Elige la longitud de tu contraseña</p>
+                <input type="number" id="size-pwd" name="size-pwd" min="12" max="50" value="12">
+                <button id="btn-gen-pwd" title="Generar Contraseña">Generar Contraseña</button>
+            </div>
+            
+            <div id="div-pass-show">
+            </div>
+        </section>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>
