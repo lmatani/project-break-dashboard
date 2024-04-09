@@ -16,13 +16,12 @@ function obtenerMensaje(hora, dia) {
     } else if (hora > 20 && hora <= 23) {
         mensaje = 'Buenas noches, es hora de pensar en cenar y descansar.';
     }
-    console.log(mensaje);
     return  mensaje;
 }
 
 function changeMode() {
     const fecha = new Date();
-    const hora = fecha.getHours();
+    const hora =  fecha.getHours();
     const section = document.getElementById('sec-reloj');
     // const section = document.querySelector('main');
 

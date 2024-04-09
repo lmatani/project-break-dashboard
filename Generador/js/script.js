@@ -12,7 +12,7 @@ btnGenPwd.addEventListener('click', () => {
 
 function generadorPass(longitud) {
     let passResult = '';
-    if(longitud >= 12 && longitud <=50) {
+    if (longitud >= 12 && longitud <=50) {
         let veces = Math.floor(longitud / 4);
          for (let i = 0; i < veces; i++) {
             passResult += dameCaracter(minusculas);

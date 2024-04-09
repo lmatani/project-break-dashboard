@@ -15,21 +15,19 @@ const link = {
     url : '',
 }
 
-
 btnAddlink.addEventListener('click', () => {
     addLink();
 });
-
 
 btnEraser.addEventListener('click', () => {
     limpiarDatos();
 });
 
-document.body.addEventListener("click", function(event) {
+document.body.addEventListener('click', function(event) {
     let target = event.target;     
     let nombreTag = target.tagName.toLowerCase();
     let myId = parseFloat(target.id);
-    console.log(myId);
+    //console.log(myId);
     if (nombreTag === 'button' && Number.isInteger(myId) && myId > 0){
         // quito de la lista de html
         let linkABorrarLS = document.getElementById(`li${target.id}`);
