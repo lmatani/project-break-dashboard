@@ -1,6 +1,8 @@
-import {  getTime, changeMode } from './Reloj/js/script.js';
+import {  getDateTime,  changeMode, miReloj} from './Reloj/js/reloj.js';
 import  mostrarPassword from './Generador/js/script.js';
 import getInfoWeather from './Meteo/js/script.js';
+import { showFavoritos, cargarDatosLSBD } from './Favoritos/js/script.js';
+
 
 // imagenes randoom
 function cargar_imagen_random () {
@@ -13,6 +15,26 @@ function cargar_imagen_random () {
 setInterval(cargar_imagen_random, 5000);
 
 // mostrar reloj
-getTime();
-changeMode();
+function showTimeCabecera(reloj) {
+    const {fecha, hora, mensaje} = reloj;
+    const containerReloj = document.getElementById('container-home-reloj');
+    containerReloj.innerHTML = '';
+    const divReloj = document.createElement('div');
+    divReloj.id = 'home-reloj';
+  
+    const pFecha = document.createElement('p');
+    pFecha.textContent = fecha;
+    pFecha.className = 'fecha-home';
+    divReloj.appendChild(pFecha);
+    const pHora = document.createElement('p');
+    pHora.textContent = hora;
+    pHora.className = 'hora-home';
+    divReloj.appendChild(pHora);
+ 
+    containerReloj.appendChild(divReloj);
+}
 
+setInterval(() => {
+    getDateTime(miReloj);
+    showTimeCabecera(miReloj);
+});

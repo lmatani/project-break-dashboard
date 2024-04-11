@@ -12,12 +12,95 @@ body {
   }
 
   main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   
     min-height: 100vh;
   }
+  .menu-bar ul{
+    margin: 0;
+    padding: 0;
+    background-color: #000000a0;
+    color:#efeffae1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    width: 100vh;
+    
+  }
+  .menu-bar li {
+    list-style: none;
+    text-decoration: none;
+    padding-right: 10px;
+  }
+  .menu-bar i {
+    font-size: 25px;
 
+  }
+
+  #container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #sub-container {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+    min-width: 400px;
+    gap: 20px;
+  }
+
+  #container-home-reloj {
+    background-color: #000000a0;
+    color:#efeffae1;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+    text-align: center;
+    width: 250px;
+  }
+
+/*
+  #container-home-reloj {
+    background-color: #000000a0;
+    color: #d5d8d8f1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: right;
+    text-align: center;
+    min-width: 150px;
+    border-radius: 20px;
+    padding: 20px;
+  }
+*/
+  #home-reloj{
+    font-size: 20px;
+    font-weight: 600;
+    font-weight: lighter;
+    letter-spacing: 1px;
+  }
+  
+  .hora-home {
+    margin: 0px;
+    padding: 0px;
+    font-size: 50px;
+  }
+
+  .fecha-home {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    color: #e4bd11;
+  }
 
   a {
     cursor: pointer;
@@ -25,13 +108,7 @@ body {
     color: #d5d8d8f1;
   }
 
-  .menu-bar ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    gap: 20px;
-  }
+ 
 
   /*li {
     list-style: none;
@@ -43,29 +120,5 @@ body {
     border-radius: 10px;
     padding: 20px;
   }*/
-
-  #container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-
-  #container-fav-pass {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-
-  #container-meteo-time {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
 
   

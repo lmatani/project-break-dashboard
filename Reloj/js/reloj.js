@@ -1,8 +1,8 @@
-/*
+
 const miReloj = {
     fecha: '',
     hora: '',
-    femensajecha: '',
+    mensaje: '',
 };
 
 function formatearValor(valor){
@@ -11,7 +11,7 @@ function formatearValor(valor){
 
 function obtenerMensaje(hora, dia) {
     let mensaje = '';
-    if (hora > 0 && hora <= 6) {
+    if (hora >= 0 && hora <= 6) {
         mensaje = 'Tú cerebro necesita descansar. Desconecta y sigue mañana.';
     } else if (hora > 6 && hora <= 13) {
         mensaje = `Buenos días en esta bonita mañana de ${dia}. Happy coding! <i class="fa-regular fa-face-grin"></i>`;
@@ -22,6 +22,7 @@ function obtenerMensaje(hora, dia) {
     } else if (hora > 20 && hora <= 23) {
         mensaje = 'Buenas noches, es hora de pensar en cenar y descansar.';
     }
+    
     return  mensaje;
 }
 
@@ -47,7 +48,9 @@ function getDateTime(reloj) {
     reloj.fecha = fechaFormat;
     reloj.hora = horaFormat;
     reloj.mensaje = obtenerMensaje(hora, diaSemana);
+    
 }
+
 function changeMode() {
     const fecha = new Date();
     const hora =  fecha.getHours();
@@ -61,47 +64,4 @@ function changeMode() {
 
 }
 
-*/
-
-import { getDateTime, changeMode, miReloj} from './reloj.js';
-
-function showTime(reloj) {
-    const {fecha, hora, mensaje} = reloj;
-    const containerReloj = document.getElementById('container-reloj');
-    containerReloj.className = 'mode-light mode-dark';
-    containerReloj.innerText = '';
-    
-    const divFecha = document.createElement('div');
-    divFecha.className = 'fecha';
-    divFecha.textContent = fecha;
-    containerReloj.appendChild(divFecha);
-
-    const divHora = document.createElement('div');
-    divHora.className = 'hora';
-    divHora.textContent = hora;
-    containerReloj.appendChild(divHora);
-
-    const divMsg = document.createElement('div');
-    divMsg.className = 'mensaje';
-    divMsg.textContent = mensaje;
-    containerReloj.appendChild(divMsg);
-}
-
-
-setInterval(() => {
-    getDateTime(miReloj);
-    showTime(miReloj);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
+export { getDateTime,  changeMode, miReloj};
