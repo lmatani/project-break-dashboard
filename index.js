@@ -1,8 +1,8 @@
 import {  getTime, changeMode } from './Reloj/js/script.js';
-import {  generadorPassword, mostrarPassword, mostrarPassGenerada } from './Generador/js/script.js';
+import  mostrarPassword from './Generador/js/script.js';
+import getInfoWeather from './Meteo/js/script.js';
 
-
-
+// imagenes randoom
 function cargar_imagen_random () {
     const numImgs = 10;
     var imgRandom = Math.floor(Math.random() * numImgs);
@@ -12,19 +12,7 @@ function cargar_imagen_random () {
 
 setInterval(cargar_imagen_random, 5000);
 
+// mostrar reloj
 getTime();
- changeMode();
-//const passContainer = document.getElementById('container-pass');
-//console.log(passContainer);
+changeMode();
 
-
-//console.log(generadorPass(22));
-/*
-containerPass.addEventListener ('click', function(event) {
-    if (event.target.id === 'btn-gen-pwd') {
-        const longitud = document.getElementById('size-pwd').value;
-        mostrarPassGenerada(generadorPassword(longitud)); 
-    }
-});
-
-*/

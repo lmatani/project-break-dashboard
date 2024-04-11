@@ -1,68 +1,110 @@
-const containerPpal = document.getElementById('sec-weather');
+
 const urlBasica = 'https://api.weatherapi.com/v1';
 const key = '248eb0dff5f14e1cadd175754240804';
 const ciudad = 'Logrono';
+const containerMeteo = document.getElementById('container-meteo');
 
+function showSectionWeather(forecastWeather) { 
+    const containerMeteo = document.getElementById('container-meteo');
 
-function showCurrentWeather(currentWeather) {
+    const divCurrent = document.createElement('div');
+    divCurrent.id = 'current-weather';
+    showCurrentWeather(divCurrent, forecastWeather);
+    //containerMeteo.appendChild(divCurrent);
+
+    const divForecast = document.createElement('div');
+    divForecast.id = 'forecast-weather';
+    showForecastWeatherHours(divForecast, forecastWeather);
+    //containerMeteo.appendChild(divForecast);
+}
+
+function showCurrentWeather(divCurrent, currentWeather) {
+        //const divCurrent = document.createElement('div');
+       // divCurrent.id = 'current-weather';
+     
+        const divCity = document.createElement('div');
 
         const title = document.createElement('h3');
-        title.innerText = `${currentWeather.location.name} (${currentWeather.location.country})`;
-        containerPpal.appendChild(title);
-
-        const divCurrent = document.getElementById('current-weather');
+        title.textContent = currentWeather.location.name + ' (' + currentWeather.location.country + ')';
+        divCity.appendChild(title);
+        containerMeteo.appendChild(divCity);
+  
         const imagen = document.createElement('img');
         imagen.src = currentWeather.current.condition.icon;
         imagen.alt =  currentWeather.current.condition.text; 
         divCurrent.appendChild(imagen); 
-        const div = document.createElement('div');
+        
+        const divTemp = document.createElement('div');
+        divTemp.id = 'temp';
         const text = document.createElement('p');
         text.className = 'text';
-        text.innerText = currentWeather.current.condition.text;
+        text.textContent = currentWeather.current.condition.text;
        
         const temp = document.createElement('p');
         temp.className = 'temp';
-        temp.innerHTML=`${Math.floor(currentWeather.current.temp_c)} ºC <i class="fa-solid fa-temperature-half"></i> `;
-        ///temp.innerText = `${Math.floor(currentWeather.current.temp_c)} ºC`;
        
-        div.appendChild(text);
-        div.appendChild(temp);
-        divCurrent.appendChild(div);
+        temp.appendChild(document.createTextNode(Math.floor(currentWeather.current.temp_c) + ' ºC '));
+        const icon = document.createElement('i');
+        icon.className ='fa-solid fa-temperature-half';
+        temp.appendChild(icon);
+
+        divTemp.appendChild(text);
+        divTemp.appendChild(temp);
+        divCurrent.appendChild(divTemp);
 
         const ulElem = document.createElement('ul');
         ulElem.id =  'values';
         const liElem1 = document.createElement('li');
-        liElem1.innerHTML = `<span>Precipitación:</span> ${currentWeather.current.precip_mm} mm`;
+        const spam1 = document.createElement('span');
+        spam1.textContent = 'Precipitación: ';
+        liElem1.appendChild(spam1);
+        liElem1.appendChild(document.createTextNode(currentWeather.current.precip_mm + ' mm'));
+      
         const liElem2 = document.createElement('li');
-        liElem2.innerHTML = `<span>Humedad:</span> ${currentWeather.current.humidity} %`;
+        const spam2 = document.createElement('span');
+        spam2.textContent = 'Humedad: ';
+        liElem2.appendChild(spam2);
+        liElem2.appendChild(document.createTextNode(currentWeather.current.humidity + ' %'));
+   
         const liElem3 = document.createElement('li');
-        liElem3.innerHTML = `<span>Viento:</span> ${currentWeather.current.wind_kph} km/h`;
+        const spam3 = document.createElement('span');
+        spam3.textContent = 'Viento: ';
+        liElem3.appendChild(spam3);
+        liElem3.appendChild(document.createTextNode(currentWeather.current.wind_kph + ' km/h'));
+
         ulElem.appendChild(liElem1);
         ulElem.appendChild(liElem2);
         ulElem.appendChild(liElem3);
         divCurrent.appendChild(ulElem);
-        containerPpal.appendChild(divCurrent);
+
+        containerMeteo.appendChild(divCurrent);
 
 }
 
-function showForecastWeatherHours(forecastWeather) {
-    const divForecast = document.getElementById('forecast-weather');
+function showForecastWeatherHours(divForecast, forecastWeather) {
+   // const divForecast = document.createElement('div');
+    //divForecast.id = 'forecast-weather';
+    
     if (forecastWeather.forecast.forecastday != null) {
         forecastWeather.forecast.forecastday[0].hour.forEach(elemen => {
             const ulElem = document.createElement('ul');
             ulElem.className = 'forecast';
+            
             const liElem1 = document.createElement('li');
             const arrTime = elemen.time.split(" ");
             liElem1.className = 'text-forecast';
-            liElem1.innerText = arrTime[1];
+            liElem1.textContent = arrTime[1];
+            
             const liElem2 = document.createElement('li');
             const imagen = document.createElement('img');
             imagen.src = elemen.condition.icon;
             imagen.alt =  elemen.condition.text;  
             liElem2.appendChild(imagen);
+            
             const liElem3 = document.createElement('li');
-            liElem3.innerText = `${Math.floor(elemen.temp_c)} ºC`;
+            liElem3.textContent =  Math.floor(elemen.temp_c) + ' ºC';
             liElem3.className = 'temp-forecast';
+
             ulElem.appendChild(liElem1);
             ulElem.appendChild(liElem2);
             ulElem.appendChild(liElem3);
@@ -70,8 +112,7 @@ function showForecastWeatherHours(forecastWeather) {
         });
        
     }
-    
-    containerPpal.appendChild(divForecast);
+    containerMeteo.appendChild(divForecast);
 }
 
 
@@ -95,8 +136,9 @@ async function getInfoWeather() {
     
     const forecastWeather = await getWeatherApi(`${urlBasica}/forecast.json?key=${key}&q=${ciudad}&days=1&aqi=no&alerts=no`);
     if (forecastWeather != null)  {
-        showCurrentWeather(forecastWeather);
-        showForecastWeatherHours(forecastWeather);
+        showSectionWeather(forecastWeather);
+        //showCurrentWeather(forecastWeather);
+        //showForecastWeatherHours(forecastWeather);
         console.log(forecastWeather);
     
     } 
@@ -112,41 +154,4 @@ function showError(txt) {
     containerPpal.appendChild(div);
 }
 
-
-/*
-function showForecastWeatherWeek(forecastWeather) {
-    const divSection = document.createElement('div');
-    divSection.id = 'forecast-weather';
-    if (forecastWeather.forecast.forecastday != null) {
-        forecastWeather.forecast.forecastday.forEach(forecastDay => {
-            const divForecast = document.createElement('div');
-            divForecast.className = 'forecast';
-            const dayOfWeek = document.createElement('p');
-            dayOfWeek.innerText = forecastDay.date;
-            const imagen = document.createElement('img');
-            imagen.src = forecastDay.day.condition.icon;
-            imagen.alt =  forecastDay.day.condition.text;  
-            const temp = document.createElement('p');
-            temp.innerText = Math.floor(forecastDay.day.avgtemp_c);
-            const tempMinMax = document.createElement('p');
-            tempMinMax.innerText = `Min: ${Math.floor(forecastDay.day.mintemp_c)} ºC Max: ${Math.floor(forecastDay.day.maxtemp_c)} ºC`;
-           // tempMinMax.innerText = `Temp: ${Math.floor(forecastDay.day.mintemp_c)} ºC - ${Math.floor(forecastDay.day.maxtemp_c)} ºC`;
-            
-            const tempMax = document.createElement('p');
-            tempMax.innerText = Math.floor(forecastDay.day.maxtemp_c);
-            divForecast.appendChild(dayOfWeek);
-            divForecast.appendChild(imagen);
-            //divForecast.appendChild(temp);
-            divForecast.appendChild(tempMinMax);
-            //divForecast.appendChild(temp);
-            divSection.appendChild(divForecast);
-        });
-       
-    }
-    
-    containerPpal.appendChild(divSection);
-}
-
-*/
-
-
+export default getInfoWeather;

@@ -11,7 +11,13 @@ body {
     color: #242323;
   }
 
- 
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
 
   a {
     cursor: pointer;
@@ -27,7 +33,7 @@ body {
     gap: 20px;
   }
 
-  li {
+  /*li {
     list-style: none;
     padding-top: 3px;
     background-color: #1414144b;
@@ -36,11 +42,30 @@ body {
     font-weight: bold;
     border-radius: 10px;
     padding: 20px;
-  }
+  }*/
 
   #container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #container-fav-pass {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
   }
+
+  #container-meteo-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  

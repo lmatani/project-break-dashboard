@@ -37,14 +37,16 @@ function generadorPassword(longitud) {
 
 const dameCaracter = ((cadena) => cadena.charAt(Math.floor(Math.random() * cadena.length)));
 
-function mostrarPassword() { 
-     
+function mostrarPassword(pass) { 
+    const divTitle = document.createElement('div');
+    divTitle.id = 'pass-title';
     const title = document.createElement('h2');
     title.textContent = 'Genera una contraseña segura';
     const icon = document.createElement('i');
     icon.className ='fa-solid fa-shield';
     title.appendChild(icon);
-    containerPass.appendChild(title);
+    divTitle.appendChild(title);
+    containerPass.appendChild(divTitle);
 
     const divPassGen = document.createElement('div');
     divPassGen.id = 'div-pass-gen';
@@ -69,28 +71,43 @@ function mostrarPassword() {
     divPassGen.appendChild(btnPassGen);
 
     containerPass.appendChild(divPassGen);
+    const divPassShow = document.createElement('div');
+    divPassShow.id = 'div-pass-show';
+    divPassShow.className = 'pass-show';
+    divPassShow.style.display = 'none';
+    containerPass.appendChild(divPassShow);
 }
 
 function mostrarPassGenerada(pass) { 
     const divPassShow = document.getElementById('div-pass-show');
-    if (divPassShow) {containerPass.removeChild(divPassShow);}
-    if (pass !==  '') {
-         const titleElem = document.createElement('p');
-        titleElem.innerText = 'Nueva contraseña:';
-        titleElem.className = 'title-new-pwd';
     
-        const pElem = document.createElement('p');
+    if (pass !==  '' && pass !==  undefined) {
+        containerPass.height = '100%'; 
+        divPassShow.innerHTML = '';
+        divPassShow.style.display = 'block';
+       // const titleElem = document.createElement('p');
+      //  titleElem.innerText = 'Nueva contraseña: ' + pass;
+       // titleElem.className = 'title-new-pwd';
+        const titleElem = document.createElement('p');
+        titleElem.className = 'title-new-pwd';
+        const spam2 = document.createElement('span');
+        spam2.textContent = 'Nueva contraseña: ';
+        
+        titleElem.appendChild(spam2);
+        titleElem.appendChild(document.createTextNode(pass));
+        divPassShow.appendChild(titleElem);
+        
+    
+       /* const pElem = document.createElement('p');
         pElem.innerText = pass;
         pElem.className = 'new-pwd';
-        
-        const divPassShow = document.createElement('div');
-        divPassShow.id = 'div-pass-show';
         divPassShow.appendChild(titleElem);
-        divPassShow.appendChild(pElem);
-        containerPass.appendChild(divPassShow);
+        divPassShow.appendChild(pElem);*/
     }
+    
 
 }
+
 
 containerPass.addEventListener ('click', function(event) {
     if (event.target.id === 'btn-gen-pwd') {
@@ -100,5 +117,5 @@ containerPass.addEventListener ('click', function(event) {
 });
 
 
-export { generadorPassword, mostrarPassword, mostrarPassGenerada };
+export default mostrarPassword;
 

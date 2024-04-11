@@ -14,16 +14,16 @@ body {
     justify-content: center;
     min-height: 100vh;
   }
-
   
-  h3 {
+  #container-meteo h3 {
     color:  #00206496;
-   
+    margin: 0px;
+    padding: 0px;
   }
 
-  
-  #sec-weather {
+  #container-meteo {
     background-color: #fffffead;
+    
     border: 1px solid #f0e5e5c9;
     border-radius: 16px;
     padding: 16px;
@@ -35,25 +35,26 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    width: 500px;
+    width: 520px;
     height: 100px;
     border: none;
     
   }
+
   #current-weather div{
-    text-align: center;
-    line-height: 0.25;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin: 0px;
+    padding: 0px 22px;
   }
 
   #current-weather img{
     width: 100px;
     height: 100px;
-  }
-
-  
-  li{
-    list-style: none;
-    padding-top: 3px;
+   
   }
 
   .text {
@@ -61,14 +62,22 @@ body {
     font-weight: 600; 
     color: #aa3702de;
     font-family: Arimo, sans-serif;
-    padding:0px 10px;
+    padding: 10px;
+    margin: 0px;
   }
   
   .temp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-size: 24px;
     font-weight: bold;
+    margin: 0px;
   }
 
+  i {
+    padding-left: 5px;
+  }
   
   span {
     font-size: 16px;
@@ -82,7 +91,7 @@ body {
     align-items: center;
     text-align: center;
     border: none;
-    padding: 6px;
+    padding: 0px 6px;
     width: 500px;
     height: 150px;
     overflow: auto;
@@ -103,6 +112,11 @@ body {
     font-weight: bold;
   }
 
-  #forecast-weather ul {
+  .forecast {
     padding-left:8px;
+  }
+
+  .forecast li, #values li {
+    list-style: none;
+    padding-top: 3px;
   }
