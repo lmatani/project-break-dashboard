@@ -12,10 +12,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
+    min-height: 100vh;
   }
 
-  #sec-reloj{
+  #container-reloj{
     border: 1px solid #e6d2d2c9;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
    
   }
 
-  #sec-reloj:hover {
+  #container-reloj:hover {
     color: #e4bd11;
     transition: opacity .15s ease-in;
   }
@@ -43,7 +43,7 @@
     font-family: Arimo, sans-serif;
   }
 
-  .frase {
+  .mensaje {
     padding-top: 10px;
     font-size: 18px;
     font-family: Arimo, sans-serif;

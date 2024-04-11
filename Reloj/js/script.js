@@ -1,4 +1,7 @@
 
+
+
+
 function formatearValor(valor){
     return (valor < 10) ? '0' + valor : valor;
 }
@@ -22,48 +25,72 @@ function obtenerMensaje(hora, dia) {
 function changeMode() {
     const fecha = new Date();
     const hora =  fecha.getHours();
-    const section = document.getElementById('sec-reloj');
-    // const section = document.querySelector('main');
+    const section = document.getElementById('container-reloj');
 
     if (hora > 20 || hora <= 6) {
-        console.log('if ' + hora);
         section.classList.toggle('mode-light');
-        //document.body.classList.toggle('mode-light');
     } else {
-        console.log('else ' + hora);
         section.classList.toggle('mode-dark');
-       //document.body.classList.toggle('mode-dark');
     }
 
 }
 
+function getTime() {
+    setInterval(() => {
+        const dias = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
+        const fecha = new Date();
+        //Fecha
+        let dia = fecha.getDate();
+        let mes = fecha.getMonth() + 1;
+        let anio = fecha.getFullYear();
+        let fechaFormat = `${formatearValor(dia)}/${formatearValor(mes)}/${anio}`;
+       
+        // hora
+        let hora = fecha.getHours();
+        let minutos = fecha.getMinutes();
+        let segundos = fecha.getSeconds();
+        let horaFormat = `${formatearValor(hora)}:${formatearValor(minutos)}:${formatearValor(segundos)}`;
+       
+        //mensaje
+        let diaSemana = dias[fecha.getDay()];
+        showTime(fechaFormat, horaFormat, hora, diaSemana);
+    });
+}
+
+
+ function showTime(fechaFormat, horaFormat, hora, diaSemana) {
+        const containerReloj = document.getElementById('container-reloj');
+        containerReloj.className = 'mode-light mode-dark';
+        containerReloj.innerText = '';
+       
+        const divFecha = document.createElement('div');
+        divFecha.className = 'fecha';
+        divFecha.textContent = fechaFormat;
+        containerReloj.appendChild(divFecha);
+   
+        const divHora = document.createElement('div');
+        divHora.className = 'hora';
+        divHora.textContent = horaFormat;
+        containerReloj.appendChild(divHora);
+   
+        const divMsg = document.createElement('div');
+        divMsg.className = 'mensaje';
+        divMsg.innerHTML = obtenerMensaje(hora, diaSemana);
+        containerReloj.appendChild(divMsg);
+}
+
+getTime();
 changeMode();
 
-setInterval(() => {
+export { getTime,  changeMode};
 
-    const dias = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
-    const fecha = new Date();
-    let divHora = document.getElementById('hora');
-    let divFecha= document.getElementById('fecha');
-    let divMsg= document.getElementById('frase');
-   
 
-    //Fecha
-    let dia = fecha.getDate();
-    let mes = fecha.getMonth() + 1;
-    let anio = fecha.getFullYear();
-    let fechaFormat = `${formatearValor(dia)}/${formatearValor(mes)}/${anio}`;
-    divFecha.innerHTML = fechaFormat;
 
-    // hora
-    let hora = fecha.getHours();
-    let minutos = fecha.getMinutes();
-    let segundos = fecha.getSeconds();
-    let horaFormat = `${formatearValor(hora)}:${formatearValor(minutos)}:${formatearValor(segundos)}`;
-    divHora.innerHTML = horaFormat;
 
-    //mensaje
-    let diaSemana = dias[fecha.getDay()];
-    divMsg.innerHTML = obtenerMensaje(hora, diaSemana);
- 
-});
+
+
+
+
+
+
+

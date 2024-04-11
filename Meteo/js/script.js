@@ -74,33 +74,6 @@ function showForecastWeatherHours(forecastWeather) {
     containerPpal.appendChild(divForecast);
 }
 
-/*
-function showForecastWeatherHours(forecastWeather) {
-    const divForecast = document.getElementById('forecast-weather');
-    if (forecastWeather.forecast.forecastday != null) {
-        forecastWeather.forecast.forecastday[0].hour.forEach(elemen => {
-            const div = document.createElement('div');
-            div.className = 'forecast';
-            const time = document.createElement('p');
-            const arrTime = elemen.time.split(" ");
-            time.innerText = arrTime[1];
-            const imagen = document.createElement('img');
-            imagen.src = elemen.condition.icon;
-            imagen.alt =  elemen.condition.text;  
-            const temp = document.createElement('p');
-            temp.innerText = `${Math.floor(elemen.temp_c)} ºC`;
-            temp.className = 'temp-forecast';
-            div.appendChild(time);
-            div.appendChild(imagen);
-            div.appendChild(temp);
-            divForecast.appendChild(div);
-        });
-       
-    }
-    
-    containerPpal.appendChild(divForecast);
-}
-*/
 
 async function getWeatherApi(url) {
     try {
