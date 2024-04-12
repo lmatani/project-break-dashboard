@@ -75,6 +75,7 @@ function updateListaBD(link, operacion) {
         localStorage.setItem('listaFavoritos', JSON.stringify(newListBD));
     }
 }
+
 /* FUNCIONES DOM */
 
 function showFavoritos(){
@@ -85,7 +86,7 @@ function showFavoritos(){
     
     const title = document.createElement('h2');
     title.className = 'title-fav';
-    title.textContent = 'Incluye en tus enlaces favoritos';
+    title.textContent = 'Incluye tus enlaces favoritos';
     divAddFav.appendChild(title);
     console.log(divAddFav);
     //  inputs
