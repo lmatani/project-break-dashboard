@@ -112,7 +112,7 @@ body {
   }
  
   #fav-lista {
-    width: auto;
+    min-width: 500px;
     min-height: 500px;
   }
 
