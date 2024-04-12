@@ -67,7 +67,7 @@ import { getDateTime, miReloj} from './reloj.js';
 
 function changeMode() {
     const fecha = new Date();
-    const hora =  fecha.getHours();
+    const hora = fecha.getHours();
     const section = document.getElementById('container-reloj');
 
     if (hora > 20 || hora <= 6) {

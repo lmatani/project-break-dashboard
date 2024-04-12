@@ -7,7 +7,7 @@ import { showFavoritos, cargarDatosLSBD } from './Favoritos/js/script.js';
 
 // imagenes randoom
 function cargar_imagen_random () {
-    const numImgs = 12;
+    const numImgs = 14;
     var imgRandom = Math.floor(Math.random() * numImgs);
     (imgRandom === 0) ? imgRandom++ : imgRandom;
     document.querySelector('body').style.backgroundImage = 'url(./assets/img/img_' + imgRandom + '.jpg)';
@@ -15,7 +15,7 @@ function cargar_imagen_random () {
 
 cargar_imagen_random();
 
-setInterval(cargar_imagen_random, 5000);
+setInterval(cargar_imagen_random, 15000);
 
 // mostrar reloj
 function showTimeCabecera(reloj) {
@@ -33,6 +33,8 @@ function showTimeCabecera(reloj) {
     pHora.textContent = hora;
     pHora.className = 'hora-home';
     divReloj.appendChild(pHora);
+  
+ 
  
     containerReloj.appendChild(divReloj);
 }

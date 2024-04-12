@@ -204,7 +204,7 @@ function obtenerDatos(favorito) {
         nameInput.value !== '' && urlInput.value !== '' &&
          nameInput.value.length >= minLength && urlInput.value.length >= minLength) {
             favorito.id = dameId();
-            favorito.nombre = nameInput.value.trim();
+            favorito.nombre = formatTexto(nameInput.value.trim());
             favorito.url = urlInput.value.trim();
             result = true;
     }
@@ -223,5 +223,13 @@ function limpiarDatos()
     urlInput.value = '';
 }
 
+function formatTexto(textFav) {
+    const maxLength = 20;
+    if (textFav.length > maxLength) {
+        return textFav.substring(0, maxLength) + "...";
+    } else {
+        return textFav;
+    }
+}
 
 export {showFavoritos, cargarDatosLSBD};

@@ -12,7 +12,7 @@ function formatearValor(valor){
 function obtenerMensaje(hora, dia) {
     let mensaje = '';
     if (hora >= 0 && hora <= 6) {
-        mensaje = 'Tú cerebro necesita descansar. Desconecta y sigue mañana.';
+        mensaje = 'Tu cerebro necesita descansar. Desconecta y sigue mañana.';
     } else if (hora > 6 && hora <= 13) {
         mensaje = `Buenos días en esta bonita mañana de ${dia}. Happy coding! <i class="fa-regular fa-face-grin"></i>`;
     } else if (hora > 13 && hora <= 15) {
@@ -44,7 +44,7 @@ function getDateTime(reloj) {
     let horaFormat = `${formatearValor(hora)}:${formatearValor(minutos)}:${formatearValor(segundos)}`;
     
     //mensaje
-    let diaSemana = dias[fecha.getDay()];
+    let diaSemana = dias[fecha.getDay() -1];
     reloj.fecha = fechaFormat;
     reloj.hora = horaFormat;
     reloj.mensaje = obtenerMensaje(hora, diaSemana);
