@@ -112,8 +112,9 @@ body {
   }
  
   #fav-lista {
-    min-width: 500px;
-    min-height: 500px;
+    min-width: 470px;
+    max-width: 800px;
+    min-height: 470px;
   }
 
   #btn-add-link {
@@ -132,7 +133,7 @@ body {
   }
   #btn-eraser{
     background-color: #0a47ca7e;
-    border: 1px solid #e6d2d2c9;
+    border: none;
     width: 40px;
     border-radius: 5px;
     cursor: pointer;

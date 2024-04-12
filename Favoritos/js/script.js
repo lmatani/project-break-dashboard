@@ -180,6 +180,7 @@ function addLinkListaFav(linkFav) {
     const liElem = document.createElement('li');
     const aElem = document.createElement('a');
     aElem.href = linkFav.url;
+    aElem.title = linkFav.url;
     aElem.setAttribute("target", "_blank");
     aElem.innerText =  linkFav.nombre;
     liElem.appendChild(aElem);

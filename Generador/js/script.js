@@ -67,6 +67,7 @@ function mostrarPassword(pass) {
 
     const btnPassGen= document.createElement('button');
     btnPassGen.id = 'btn-gen-pwd';
+    btnPassGen.title = 'Generar Contraseña';
     btnPassGen.textContent = 'Generar Contraseña';
     divPassGen.appendChild(btnPassGen);
 
