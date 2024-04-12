@@ -51,17 +51,6 @@ function getDateTime(reloj) {
     
 }
 
-function changeMode() {
-    const fecha = new Date();
-    const hora =  fecha.getHours();
-    const section = document.getElementById('container-reloj');
 
-    if (hora > 20 || hora <= 6) {
-        section.classList.toggle('mode-light');
-    } else {
-        section.classList.toggle('mode-dark');
-    }
 
-}
-
-export { getDateTime,  changeMode, miReloj};
+export { getDateTime, miReloj};

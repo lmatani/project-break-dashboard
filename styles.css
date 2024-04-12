@@ -9,6 +9,7 @@ body {
     font-family: Arial, Helvetica, sans-serif, sans-serif;
     background-color: #efeffae1;
     color: #242323;
+
   }
 
   main {
@@ -18,12 +19,10 @@ body {
   .menu-bar ul{
     margin: 0;
     padding: 0;
-    background-color: #000000a0;
-    color:#efeffae1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-content: center;
     width: 100vh;
     
@@ -31,62 +30,55 @@ body {
   .menu-bar li {
     list-style: none;
     text-decoration: none;
-    padding-right: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
   }
   .menu-bar i {
     font-size: 25px;
-
+    color: #000000d3;
   }
 
+  /* meteo pass en el sub y favoritos*/
   #container {
+    
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 20px;
+    width: auto;
+ 
   }
 
+  /* meteo pass*/
   #sub-container {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
-    justify-content: right;
+    justify-content: space-around;
     align-items: center;
-    min-width: 400px;
-    gap: 20px;
+    gap: 100px;
+    padding: 50px;
   }
 
   #container-home-reloj {
-    background-color: #000000a0;
-    color:#efeffae1;
+    background-color:#fffffead;
+    color:#031541;;
     margin-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-content: center;
     text-align: center;
-    width: 250px;
+    width: 220px;
+    border-radius: 15px;
+    padding-right: 20px;
   }
 
-/*
-  #container-home-reloj {
-    background-color: #000000a0;
-    color: #d5d8d8f1;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: right;
-    text-align: center;
-    min-width: 150px;
-    border-radius: 20px;
-    padding: 20px;
-  }
-*/
   #home-reloj{
     font-size: 20px;
     font-weight: 600;
     font-weight: lighter;
     letter-spacing: 1px;
+    
   }
   
   .hora-home {
@@ -99,26 +91,13 @@ body {
     margin: 0px;
     padding: 0px;
     font-size: 20px;
-    color: #e4bd11;
+    font-weight: 600;
+    color: #aa3702de;
   }
 
   a {
     cursor: pointer;
     text-decoration: none;
-    color: #d5d8d8f1;
   }
 
  
-
-  /*li {
-    list-style: none;
-    padding-top: 3px;
-    background-color: #1414144b;
-    font-size: 24px;
-    
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 20px;
-  }*/
-
-  

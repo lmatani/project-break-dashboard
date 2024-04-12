@@ -1,16 +1,19 @@
-import {  getDateTime,  changeMode, miReloj} from './Reloj/js/reloj.js';
+import {  getDateTime, miReloj} from './Reloj/js/reloj.js';
 import  mostrarPassword from './Generador/js/script.js';
 import getInfoWeather from './Meteo/js/script.js';
 import { showFavoritos, cargarDatosLSBD } from './Favoritos/js/script.js';
 
 
+
 // imagenes randoom
 function cargar_imagen_random () {
-    const numImgs = 10;
+    const numImgs = 12;
     var imgRandom = Math.floor(Math.random() * numImgs);
     (imgRandom === 0) ? imgRandom++ : imgRandom;
     document.querySelector('body').style.backgroundImage = 'url(./assets/img/img_' + imgRandom + '.jpg)';
 }
+
+cargar_imagen_random();
 
 setInterval(cargar_imagen_random, 5000);
 

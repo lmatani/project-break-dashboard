@@ -63,7 +63,20 @@ function changeMode() {
 
 */
 
-import { getDateTime, changeMode, miReloj} from './reloj.js';
+import { getDateTime, miReloj} from './reloj.js';
+
+function changeMode() {
+    const fecha = new Date();
+    const hora =  fecha.getHours();
+    const section = document.getElementById('container-reloj');
+
+    if (hora > 20 || hora <= 6) {
+        section.classList.toggle('mode-light');
+    } else {
+        section.classList.toggle('mode-dark');
+    }
+
+}
 
 function showTime(reloj) {
     const {fecha, hora, mensaje} = reloj;
@@ -83,15 +96,19 @@ function showTime(reloj) {
 
     const divMsg = document.createElement('div');
     divMsg.className = 'mensaje';
-    divMsg.textContent = mensaje;
+    divMsg.innerHTML = mensaje;
     containerReloj.appendChild(divMsg);
 }
+
 
 
 setInterval(() => {
     getDateTime(miReloj);
     showTime(miReloj);
+    changeMode();
 });
+
+
 
 
 
