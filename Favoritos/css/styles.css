@@ -139,6 +139,10 @@ body {
     
   }
 
+  #lista {
+    padding: 10px;
+  }
+
   #lista li, a {
     position: relative;
     display: inline-block;
