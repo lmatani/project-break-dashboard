@@ -10,20 +10,15 @@ function showSectionWeather(forecastWeather) {
     const divCurrent = document.createElement('div');
     divCurrent.id = 'current-weather';
     showCurrentWeather(divCurrent, forecastWeather);
-    //containerMeteo.appendChild(divCurrent);
 
     const divForecast = document.createElement('div');
     divForecast.id = 'forecast-weather';
     showForecastWeatherHours(divForecast, forecastWeather);
-    //containerMeteo.appendChild(divForecast);
 }
 
 function showCurrentWeather(divCurrent, currentWeather) {
-        //const divCurrent = document.createElement('div');
-       // divCurrent.id = 'current-weather';
-     
+      
         const divCity = document.createElement('div');
-
         const title = document.createElement('h3');
         title.textContent = currentWeather.location.name + ' (' + currentWeather.location.country + ')';
         divCity.appendChild(title);
@@ -82,9 +77,7 @@ function showCurrentWeather(divCurrent, currentWeather) {
 }
 
 function showForecastWeatherHours(divForecast, forecastWeather) {
-   // const divForecast = document.createElement('div');
-    //divForecast.id = 'forecast-weather';
-    
+
     if (forecastWeather.forecast.forecastday != null) {
         forecastWeather.forecast.forecastday[0].hour.forEach(elemen => {
             const ulElem = document.createElement('ul');
@@ -137,10 +130,6 @@ async function getInfoWeather() {
     const forecastWeather = await getWeatherApi(`${urlBasica}/forecast.json?key=${key}&q=${ciudad}&days=1&aqi=no&alerts=no`);
     if (forecastWeather != null)  {
         showSectionWeather(forecastWeather);
-        //showCurrentWeather(forecastWeather);
-        //showForecastWeatherHours(forecastWeather);
-        console.log(forecastWeather);
-    
     } 
    
 }

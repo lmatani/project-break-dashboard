@@ -5,7 +5,6 @@ body {
     padding: 0;
     border: 0;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
-    background-color: #efeffae1;
     color: #242323;
     background-image: url('../../assets/img/img_9.jpg');
     background-size: cover; 
@@ -57,8 +56,9 @@ body {
   }
 
   i {
-    padding-left: 5px;
+    padding-right: 6px;
   }
+
   #container-favoritos {
     display: flex;
     flex-direction: column;
@@ -166,30 +166,3 @@ body {
     font-weight: bold;
     cursor: pointer;
   }
-
-
-
-/*  
-.favoritos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 95px;
-    padding: 20px;
-    border-radius: 15px;
-  }
-  
-
-#sec{
-    border: 1px solid #e6d2d2c9;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 200px;
-    border-radius: 40px;
-   
-  }*/

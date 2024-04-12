@@ -10,8 +10,6 @@ let initId = 1;
 const opcDelete = 0;
 const opcInsert = 1;
 
-//localStorage.clear();
-
 const link = {
     id : 0,
     nombre : '',
@@ -22,7 +20,8 @@ containerFav.addEventListener ('click', function(event) {
     if (event.target.id === 'btn-add-link') {
         addLink();
     }
-    if (event.target.id === 'btn-eraser') {
+   
+    if (event.target.id === 'btn-eraser' ) {
         limpiarDatos();
     }
 });
@@ -42,8 +41,6 @@ document.body.addEventListener('click', function(event) {
     }
     
 });
-
-
 
 
 showFavoritos();

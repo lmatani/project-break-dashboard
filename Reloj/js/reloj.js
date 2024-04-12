@@ -1,4 +1,3 @@
-
 const miReloj = {
     fecha: '',
     hora: '',
@@ -26,7 +25,6 @@ function obtenerMensaje(hora, dia) {
     return  mensaje;
 }
 
-
 function getDateTime(reloj) {
     const dias = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
     const fecha = new Date();
@@ -50,7 +48,5 @@ function getDateTime(reloj) {
     reloj.mensaje = obtenerMensaje(hora, diaSemana);
     
 }
-
-
 
 export { getDateTime, miReloj};

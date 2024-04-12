@@ -3,8 +3,6 @@ import  mostrarPassword from './Generador/js/script.js';
 import getInfoWeather from './Meteo/js/script.js';
 import { showFavoritos, cargarDatosLSBD } from './Favoritos/js/script.js';
 
-
-
 // imagenes randoom
 function cargar_imagen_random () {
     const numImgs = 14;
@@ -14,8 +12,8 @@ function cargar_imagen_random () {
 }
 
 cargar_imagen_random();
-
 setInterval(cargar_imagen_random, 15000);
+
 
 // mostrar reloj
 function showTimeCabecera(reloj) {
@@ -33,8 +31,6 @@ function showTimeCabecera(reloj) {
     pHora.textContent = hora;
     pHora.className = 'hora-home';
     divReloj.appendChild(pHora);
-  
- 
  
     containerReloj.appendChild(divReloj);
 }
@@ -43,3 +39,4 @@ setInterval(() => {
     getDateTime(miReloj);
     showTimeCabecera(miReloj);
 });
+

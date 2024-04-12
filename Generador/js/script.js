@@ -85,9 +85,7 @@ function mostrarPassGenerada(pass) {
         containerPass.height = '100%'; 
         divPassShow.innerHTML = '';
         divPassShow.style.display = 'block';
-       // const titleElem = document.createElement('p');
-      //  titleElem.innerText = 'Nueva contraseña: ' + pass;
-       // titleElem.className = 'title-new-pwd';
+
         const titleElem = document.createElement('p');
         titleElem.className = 'title-new-pwd';
         const spam2 = document.createElement('span');
@@ -96,16 +94,7 @@ function mostrarPassGenerada(pass) {
         titleElem.appendChild(spam2);
         titleElem.appendChild(document.createTextNode(pass));
         divPassShow.appendChild(titleElem);
-        
-    
-       /* const pElem = document.createElement('p');
-        pElem.innerText = pass;
-        pElem.className = 'new-pwd';
-        divPassShow.appendChild(titleElem);
-        divPassShow.appendChild(pElem);*/
     }
-    
-
 }
 
 
